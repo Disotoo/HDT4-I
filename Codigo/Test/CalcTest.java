@@ -21,6 +21,50 @@ class CalcTest {
 
 
 	@Test
+	void pullpushVectorTest() {
+		sta = respuesta.getInstance(1, 0);
+		sta.push(4);
+		sta.push(3);
+		sta.push(2);
+		int resultado = 0;
+		resultado = (int) sta.pull();
+		assertEquals(2, resultado);
+	}
+
+	@Test
+	void pullpushArrayTest() {
+		sta = respuesta.getInstance(2, 0);
+		sta.push(4);
+		sta.push(3);
+		sta.push(2);
+		int resultado = 0;
+		resultado = (int) sta.pull();
+		assertEquals(2, resultado);
+	}
+
+	@Test
+	void pullpushSingleTest() {
+		sta = respuesta.getInstance(3, 1);
+		sta.push(4);
+		sta.push(3);
+		sta.push(2);
+		int resultado = 0;
+		resultado = (int) sta.pull();
+		assertEquals(2, resultado);
+	}
+
+	@Test
+	void pullpushDoubleTest() {
+		sta = respuesta.getInstance(3, 2);
+		sta.push(4);
+		sta.push(3);
+		sta.push(2);
+		int resultado = 0;
+		resultado = (int) sta.pull();
+		assertEquals(2, resultado);
+	}
+
+	@Test
 	void arrayTest() throws Exception{
 		Calculadora calculadora = Calculadora.getInstance();
 		ArrayList<String> lista = new ArrayList<>();
@@ -40,7 +84,7 @@ class CalcTest {
 	void vectorTest() throws Exception{
 		Calculadora calculadora = Calculadora.getInstance();
 		ArrayList<String> lista = new ArrayList<>();
-		sta = respuesta.getInstance(2,0);
+		sta = respuesta.getInstance(1,0);
 		lista.add("1");
 		lista.add("2");
 		lista.add("+");
